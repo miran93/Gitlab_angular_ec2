@@ -22,7 +22,6 @@ build_master:
   stage: build
   script:
   - npm run build
-  when: manual
   only: ['main']
 
 # Job Two for deploy build to server
