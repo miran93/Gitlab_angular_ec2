@@ -39,5 +39,5 @@ deploy_master:
     - apt-get -y install rsync
   script:
     - ssh -i $ID_RSA -o StrictHostKeyChecking=no ubuntu@$SERVER_IP
-    - rsync -zvhr -auv -e "ssh -i $PRIVATE_KEY" dist/ ubuntu@$SERVER_IP:/var/www/html/angular/
+    - rsync -zvhr -auv -e "ssh -i $ID_RSA" dist/ ubuntu@$SERVER_IP:/var/www/html/angular/
   only: ['main']
