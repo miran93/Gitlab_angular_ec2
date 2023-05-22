@@ -22,7 +22,7 @@ build_master:
   stage: build
   script:
   - npm run build
-  only: ['master']
+  only: ['main']
 
 # Job Two for deploy build to server
 deploy_master:
@@ -39,4 +39,4 @@ deploy_master:
   script:
     - ssh -i $PRIVATE_KEY ubuntu@$SERVER_IP
     - rsync -zvhr -auv -e "ssh -i $PRIVATE_KEY" dist/ ubuntu@$SERVER_IP:/var/www/html/angular/
-  only: ['master']
+  only: ['main']
