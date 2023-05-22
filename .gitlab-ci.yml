@@ -30,9 +30,8 @@ deploy_master:
   before_script:
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)
-    - echo -e "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa     
-    - chmod 600 ~/.ssh/id_rsa     
-    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
     - apt-get update -y
     - apt-get -y install rsync
