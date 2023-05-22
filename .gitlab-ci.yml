@@ -7,14 +7,14 @@ stages:
 before_script:
   - npm install
 
-# Job One for making build
+
 build_master:
   stage: build
   script:
   - npm run build
   only: ['master']
 
-# Job Two for deploy build to server
+
 deploy_master:
   stage: deploy
   script:
