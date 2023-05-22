@@ -15,11 +15,11 @@ build_master:
   stage: build
   script:
   - npm run build
-  only: ['master']
+  only: ['main']
 
 # Job Two for deploy build to server
 deploy_master:
   stage: deploy
   script:
     - echo "deploy Build"
-  only: ['master']
+  only: ['main']
